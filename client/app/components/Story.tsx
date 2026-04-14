@@ -23,12 +23,17 @@ export default function Story() {
             Why We Built This
           </h3>
 
-          <div className="flex w-fit items-center gap-3 bg-amber-500/10 border border-amber-500/20 rounded-lg px-4 py-3 mb-6">
+          <a
+            href="https://devpost.com/software/agent-ux?ref_content=my-projects-tab&ref_feature=my_projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-fit items-center gap-3 bg-amber-500/10 border border-amber-500/20 hover:border-amber-500/40 rounded-lg px-4 py-3 mb-6 transition-colors"
+          >
             <Trophy className="w-5 h-5 text-amber-400 shrink-0" />
             <p className="text-sm text-amber-300">
               <span className="font-semibold">Winner</span>, DiamondHacks 2026
             </p>
-          </div>
+          </a>
 
           <div className="space-y-4 text-text-secondary text-sm leading-relaxed">
             <p>

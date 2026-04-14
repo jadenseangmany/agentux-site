@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
 
 export default function DemoVideo() {
   return (
@@ -24,28 +23,14 @@ export default function DemoVideo() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="relative bg-dark-bg border border-dark-border rounded-2xl overflow-hidden aspect-video flex flex-col items-center justify-center">
-            {/* Subtle gradient background */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(37,99,235,0.08),_transparent_70%)]" />
-
-            <motion.div
-              initial={{ scale: 0.8 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="relative mb-6"
-            >
-              <div className="w-24 h-24 bg-blue-primary rounded-full flex items-center justify-center mx-auto">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
-            </motion.div>
-
-            <p className="text-xl font-semibold text-text-primary relative z-10">
-              Demo Video Coming Soon
-            </p>
-            <p className="text-sm text-text-muted mt-2 relative z-10">
-              Watch AgentUX automatically navigate a website&#39;s UX
-            </p>
+          <div className="relative bg-dark-bg border border-dark-border rounded-2xl overflow-hidden aspect-video">
+            <iframe
+              src="https://www.youtube.com/embed/AN_QnUUL0Mg"
+              title="AgentUX Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
           </div>
         </motion.div>
       </div>

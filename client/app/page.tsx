@@ -6,7 +6,7 @@ import HowItWorks from "./components/HowItWorks";
 import Story from "./components/Story";
 import WhoItsFor from "./components/WhoItsFor";
 import Team from "./components/Team";
-import CTA from "./components/CTA";
+
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <Story />
       <WhoItsFor />
       <Team />
-      <CTA />
+
       <Footer />
     </>
   );

@@ -1,10 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Send } from "lucide-react";
 import Image from "next/image";
+import ContactModal from "./ContactModal";
 
 export default function Hero() {
+  const [showEmail, setShowEmail] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [showContact, setShowContact] = useState(false);
+
   return (
     <section
       id="intro"
@@ -55,14 +62,59 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex items-center gap-3"
           >
-            <a
-              href="#vision"
+            <button
+              onClick={() => setShowEmail(true)}
               className="inline-flex items-center gap-2 bg-blue-primary hover:bg-blue-light text-white px-6 py-3 rounded-full font-medium transition-all hover:shadow-[0_0_30px_rgba(37,99,235,0.3)]"
             >
-              Learn More
+              Book a Demo
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </button>
+
+            <AnimatePresence>
+              {showEmail && (
+                <motion.form
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "auto" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                      setEmailError("Please enter a valid email address.");
+                      return;
+                    }
+                    setEmailError("");
+                    setShowContact(true);
+                  }}
+                  className="flex flex-col gap-1 overflow-hidden"
+                >
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      autoFocus
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        setEmailError("");
+                      }}
+                      className={`bg-dark-card border rounded-full px-5 py-3 text-sm text-text-primary placeholder-text-muted focus:outline-none transition-colors w-56 ${emailError ? "border-red-400" : "border-dark-border focus:border-blue-primary"}`}
+                    />
+                    <button
+                      type="submit"
+                      className="bg-blue-primary hover:bg-blue-light text-white p-3 rounded-full transition-colors shrink-0"
+                    >
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </div>
+                  {emailError && (
+                    <p className="text-red-400 text-xs pl-5">{emailError}</p>
+                  )}
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
 
@@ -87,6 +139,12 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      <ContactModal
+        open={showContact}
+        onClose={() => setShowContact(false)}
+        prefillEmail={email}
+      />
     </section>
   );
 }

@@ -22,8 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="min-h-screen">{children}</body>
+    <html lang="en" className={`${inter.variable} antialiased scroll-smooth`}>
+      <body className="min-h-screen">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.history.scrollRestoration = "manual"; window.scrollTo(0, 0);`,
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

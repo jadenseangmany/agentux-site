@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 const navLinks = [
   { label: "Intro", href: "#intro" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <motion.nav
@@ -42,12 +44,12 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
+          <button
+            onClick={() => setShowContact(true)}
             className="bg-blue-primary hover:bg-blue-light text-white px-5 py-2 rounded-full text-sm font-medium transition-colors"
           >
             Contact Us
-          </a>
+          </button>
         </div>
 
         <button
@@ -76,16 +78,22 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
+            <button
               className="bg-blue-primary hover:bg-blue-light text-white px-5 py-2 rounded-full text-sm font-medium transition-colors text-center"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => {
+                setMobileOpen(false);
+                setShowContact(true);
+              }}
             >
               Contact Us
-            </a>
+            </button>
           </div>
         </motion.div>
       )}
+      <ContactModal
+        open={showContact}
+        onClose={() => setShowContact(false)}
+      />
     </motion.nav>
   );
 }
