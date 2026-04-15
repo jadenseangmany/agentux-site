@@ -16,25 +16,25 @@ const experiences = [
     title: "The Hackathon Experience",
     image: "/teamphoto_svg.svg",
     description:
-      "We came together around one idea: UX research should be something any team can do, not just the ones with big budgets.",
+      "We worked so hard on this project and honestly thought we didn't win because every other track was awarded during the closing ceremony. Then ours was the last one called, and we were so excited we couldn't hold back our screams.",
   },
   {
     title: "24 Hours of Innovation",
     image: "/sitting-down.svg",
     description:
-      "We went from concept to working prototype in just one day. Lots of coffee, a ton of creativity, and a shared goal to help others.",
+      "We were debugging while waiting in line for food because we were so close to squashing a few bugs. We also didn't want to miss all the free food, so we just brought our laptops with us.",
   },
   {
     title: "Building Together",
     image: "/building-together.svg",
     description:
-      "Late nights, endless debugging, and a few breakthrough moments that made it all worth it. That's the hackathon experience.",
+      "This is us during judging. We were super nervous about pitching our idea, but being together made it a lot easier to handle the stress.",
   },
   {
     title: "Bringing Ideas to Life",
     image: "/bringing-ideas.svg",
     description:
-      "What started as whiteboard sketches turned into something real. Everyone brought something different to the table and it all came together.",
+      "This was us working with one of the mentors to refine our project. His feedback was crucial in helping us win and making our product feel a lot more polished.",
   },
 ];
 
@@ -76,12 +76,9 @@ export default function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Meet the Team
           </h2>
-          <p className="text-text-secondary">
-            Built with passion during a 24-hour hackathon
-          </p>
         </motion.div>
 
         {/* Experience Cards */}

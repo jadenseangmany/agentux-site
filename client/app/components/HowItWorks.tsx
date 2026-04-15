@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Eye, Wrench } from "lucide-react";
+import Image from "next/image";
 
 const steps = [
   {
-    icon: Users,
+    image: "/custom-persona.png",
     title: "Choose Your Personas",
     description:
       "Pick from built-in personas like first-time visitors and elderly users, or create your own to match your real audience. Set how many tasks to run and kick off your evaluations.",
   },
   {
-    icon: Eye,
+    image: "/agents-showcase.png",
     title: "Watch Agents Navigate",
     description:
       "Browser Use agents navigate your site as each persona at the same time, clicking, scrolling, and getting confused in all the right places. You can watch their live browser sessions in real time.",
   },
   {
-    icon: Wrench,
+    image: "/apply-fix.gif",
     title: "Apply Fixes Instantly",
     description:
       "See your usability issues ranked with specific suggestions on how to fix them. Apply a fix with one click to preview the before and after, then copy a prompt for your AI code editor to ship it.",
@@ -74,8 +74,13 @@ export default function HowItWorks() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="bg-dark-card border border-dark-border rounded-xl p-8 group hover:border-blue-primary/40 transition-colors"
             >
-              <div className="w-14 h-14 bg-blue-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-primary/20 transition-colors">
-                <step.icon className="w-7 h-7 text-blue-light" />
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6">
+                <Image
+                  src={step.image}
+                  alt={step.title}
+                  fill
+                  className="object-contain"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">

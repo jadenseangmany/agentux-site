@@ -2,16 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
-import Image from "next/image";
 
 export default function Story() {
   return (
     <section id="vision" className="bg-dark-surface overflow-hidden">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-0">
-        {/* Text column */}
+      <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.7 }}
           className="px-6 lg:px-12 py-24"
@@ -66,22 +64,6 @@ export default function Story() {
               . Every team deserves to know if their product actually works.
             </p>
           </div>
-        </motion.div>
-
-        {/* Image column — flush to the right edge */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, margin: "-100px" }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative min-h-[400px] lg:min-h-full"
-        >
-          <Image
-            src="/thank-small-business.png"
-            alt="We can't thank you enough for supporting our small business"
-            fill
-            className="object-cover"
-          />
         </motion.div>
       </div>
     </section>
