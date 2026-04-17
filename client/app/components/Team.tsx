@@ -8,7 +8,7 @@ const teamMembers = [
   { name: "Jaden Seangmany", role: "Developer", image: "/linkedin-pfp.jpeg", link: "https://www.linkedin.com/in/jadenseangmany" },
   { name: "Khang Nguyen", role: "Developer", image: "/linkedin-khang.jpeg", link: "https://www.linkedin.com/in/khangnguyen05/" },
   { name: "Alice Lan", role: "Designer", image: "/linkedin-alice.jpeg", link: "https://www.linkedin.com/in/alice-lan06/" },
-  { name: "Manjuari Gobriaj", role: "Designer", image: "/linkedin-manu.jpeg", link: "https://www.linkedin.com/in/manjusri-gobiraj/" },
+  { name: "Manjusri Gobiraj", role: "Designer", image: "/linkedin-manu.jpeg", link: "https://www.linkedin.com/in/manjusri-gobiraj/" },
 ];
 
 const experiences = [

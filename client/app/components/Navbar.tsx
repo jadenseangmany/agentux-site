@@ -46,7 +46,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setShowContact(true)}
-            className="bg-blue-primary hover:bg-blue-light text-white px-5 py-2 rounded-full text-sm font-medium transition-colors"
+            className="bg-blue-primary hover:bg-blue-light text-white px-5 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer"
           >
             Contact Us
           </button>

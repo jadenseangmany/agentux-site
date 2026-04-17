@@ -47,7 +47,7 @@ export default function ContactModal({
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-text-muted hover:text-text-primary transition-colors"
+              className="absolute top-4 right-4 text-text-muted hover:text-text-primary transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
